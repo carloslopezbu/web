@@ -11,15 +11,21 @@ import Header from "@/components/Header.astro";
                 Hola, soy <span id="typewriter"></span>
             </h3>
 
-            <p class="text-2xl leading-relaxed">
-                Soy un desarrollador web apasionado por crear experiencias...
+            <p class="text-2xl leading-relaxed font-semibold">
+                Actualmente estoy adentrandome en el mundo de la <a
+                    class="gradient-text">ciencia de datos</a
+                >, <span class="gradient-text">visión por ordernador</span>
+                y los distintos paradigmas del <span class="gradient-text"
+                    >aprendizaje automático</span
+                > con una pasíon e interés por la resolución problemas complejos
+                y del día a día.
             </p>
         </div>
     </section>
 </main>
 
 <script>
-    import { startTypewriter } from "@/scripts/typewriter.js";
+    import { typewriter } from "@/scripts/typewriter.js";
 
     const texts: {
         text: string;
@@ -31,9 +37,9 @@ import Header from "@/components/Header.astro";
         { text: "desarrollador.", font: "font-sans" },
     ];
 
-    const style: string = "text-3xl font-semibold text-[#7b1e3b]";
+    const style: string = "text-3xl font-semibold text-sky-400";
 
-    startTypewriter(texts, style);
+    typewriter({ texts, style });
 </script>
 
 <style>
@@ -41,19 +47,37 @@ import Header from "@/components/Header.astro";
         margin: 0;
         width: 100%;
         background: radial-gradient(
-            circle farthest-corner at 10% 20%,
-            rgba(246, 161, 34, 0.85) 0.1%,
-            rgba(254, 118, 118, 0.87) 90%
+            circle at 30% 30%,
+            #13547a 0%,
+            #80d0c7 100%
         );
     }
-
     .aboutme {
         font-family: monospace;
     }
 
     #typewriter {
-        height: 2.5rem; /* ajusta según el tamaño de fuente y líneas */
+        height: 2.5rem;
         overflow: hidden;
         white-space: nowrap;
+    }
+
+    .gradient-text {
+        display: inline-block;
+        font-weight: bold;
+        color: #ffffff;
+        transition:
+            transform 0.3s ease,
+            background 0.5s ease;
+    }
+
+    .gradient-text:hover {
+        background: linear-gradient(to right, #38bdf8, #6366f1);
+        background-size: 200%;
+        background-position: right;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transform: translateY(-4px);
+        /* text-shadow: 0 0 10px rgba(255, 255, 255, 0.2); */
     }
 </style>

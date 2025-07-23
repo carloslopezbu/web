@@ -1,4 +1,4 @@
-export function startTypewriter(texts, style) {
+export function typewriter(texts, style) {
   const el = document.getElementById("typewriter");
 
   let current = 0;
