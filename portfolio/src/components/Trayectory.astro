@@ -1,0 +1,46 @@
+---
+import Timeline from "@/components/Timeline.astro";
+
+const academics = [
+    {
+        range: "2022",
+        title: "Inicio de mis estudios en Ingeniería Informática",
+        description: "Universidad de Córdoba.",
+    },
+    {
+        range: "2022 - 2024",
+        title: "Delegado de clase",
+        description:
+            "Representé a mis compañeros y participé en decisiones académicas en el consejo de estudiantes.",
+    },
+    {
+        range: "2024",
+        title: "Colaboración con el departamento de Ciencias de la Computación e Inteligencia Artificial",
+        description:
+            "Aprendí de los mejores en el grupo de investigación de Aplicaciones de la Visión Artificial.",
+    },
+];
+
+const experiences = [
+    {
+        range: "2023",
+        title: "Profesor de apoyo en Academia Universitaria Main",
+        description:
+            "Impartí clases particulares a estudiantes de Ingeniería Informática, reforzando conceptos clave y ayudando en la preparación de exámenes. Esta experiencia fortaleció mis habilidades de comunicación, empatía y liderazgo técnico.",
+    },
+];
+---
+
+<section
+    id="trayectory"
+    class="w-full px-4 md:px-16 py-16 bg-gradient-to-b from-[#0f2c3f]/90 to-[#13547a]/90 backdrop-blur-sm"
+>
+    <h2 class="text-center text-white text-4xl md:text-5xl font-bold mb-16">
+        Trayectoria
+    </h2>
+
+    <div class="flex flex-col gap-20">
+        <Timeline sectionTitle="🎓 Académica" items={academics} />
+        <Timeline sectionTitle="💼 Experiencia" items={experiences} />
+    </div>
+</section>

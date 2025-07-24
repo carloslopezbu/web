@@ -1,0 +1,45 @@
+---
+type TimelineItem = {
+    range: string;
+    title: string;
+    description: string;
+};
+
+const { sectionTitle, items } = Astro.props as {
+    sectionTitle: string;
+    items: TimelineItem[];
+};
+---
+
+<section class="mb-24 w-full px-4 md:px-16">
+    <h3 class="text-2xl md:text-3xl font-bold text-cyan-300 mb-10 text-left">
+        {sectionTitle}
+    </h3>
+
+    <ul class="relative pl-6 space-y-10">
+        <div
+            class="absolute top-0 left-[0.375rem] w-1 h-full bg-gradient-to-b from-cyan-400 to-indigo-500 rounded-full opacity-70 pointer-events-none"
+        >
+        </div>
+
+        {
+            items.map((item) => (
+                <li class="group relative">
+                    <span class="absolute -left-[0.75rem] top-1 w-4 h-4 rounded-full bg-cyan-400 border-4 border-slate-900 group-hover:scale-110 transition-transform" />
+
+                    <div class="bg-slate-800/70 p-6 rounded-xl shadow-md hover:shadow-cyan-400/30 transition-all duration-300 max-w-3xl">
+                        <div class="text-sm text-sky-300 font-semibold">
+                            {item.range}
+                        </div>
+                        <h4 class="text-white font-bold text-lg mt-1">
+                            {item.title}
+                        </h4>
+                        <p class="text-slate-300 text-sm mt-1">
+                            {item.description}
+                        </p>
+                    </div>
+                </li>
+            ))
+        }
+    </ul>
+</section>
