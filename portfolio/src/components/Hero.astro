@@ -1,0 +1,75 @@
+<section
+    class="h-screen flex items-center justify-center px-8 bg-gradient-to-br from-[#13547a] to-[#80d0c7]"
+>
+    <div class="max-w-4xl text-white">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+            Hola, soy <span id="typewriter"></span>
+        </h1>
+        <h2 class="text-xl md:text-2xl font-medium mb-6">
+            Estudiante de Ingeniería Informática con pasión por la ciencia de
+            datos y la inteligencia artificial.
+        </h2>
+        <p
+            class="text-lg md:text-xl text-slate-300 mb-8 leading-relaxed font-semibold"
+        >
+            Interesado en <span class="gradient-text">visión por ordenador</span
+            >,
+            <span class="gradient-text">aprendizaje automático</span> y
+            <span class="gradient-text">desarrollo web</span>.
+        </p>
+        <div class="flex gap-4">
+            <a
+                href="#projects"
+                class="px-6 py-2 bg-sky-500 hover:bg-sky-600 text-white rounded-lg transition"
+            >
+                Ver proyectos
+            </a>
+            <a
+                href="/cv.pdf"
+                target="_blank"
+                class="px-6 py-2 border border-white hover:bg-white hover:text-sky-800 rounded-lg transition"
+            >
+                Descargar CV
+            </a>
+        </div>
+    </div>
+</section>
+
+<style>
+    .gradient-text {
+        display: inline-block;
+        transition:
+            transform 0.3s ease,
+            background 0.5s ease;
+    }
+
+    .gradient-text:hover {
+        background: linear-gradient(
+            to right,
+            rgb(0, 255, 150),
+            rgb(220, 255, 50)
+        );
+        background-size: 200%;
+        background-position: right;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transform: translateY(-4px);
+    }
+</style>
+
+<script>
+    import { typewriter } from "@/scripts/typewriter.js";
+
+    const texts: {
+        text: string;
+        font: string;
+    }[] = [
+        { text: "Carlos.", font: "font-sans" },
+        { text: "científico de datos.", font: "font-sans" },
+        { text: "investigador.", font: "font-sans" },
+        { text: "desarrollador.", font: "font-sans" },
+    ];
+
+    const style: string = "text-5xl font-semibold text-sky-400";
+    typewriter(texts, style);
+</script>
