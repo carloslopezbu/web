@@ -21,7 +21,7 @@ export function initScrollTransitions() {
   gsap.from("#trayectory", {
     scrollTrigger: {
       trigger: "#trayectory",
-      start: "top 85%",
+      start: "top 55%",
       toggleActions: "play none none reverse",
     },
     opacity: 0,
